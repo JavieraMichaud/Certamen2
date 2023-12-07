@@ -1,0 +1,21 @@
+#	Tipo de Instruccion:
+1	I
+2	I
+3	I
+4	ES 5
+5	I
+6	ES 10
+7	I
+8	I
+9	I
+10	I
+11	I
+12	I
+13	ES 5
+14	I
+15	ES 9
+16	ES 8
+17	I
+18	I
+19	I
+20	F

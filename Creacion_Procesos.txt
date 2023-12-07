@@ -1,0 +1,6 @@
+# Tiempo Creación (se agregan a Cola Listo) Nombre de archivo del Proceso(s)
+1 Proceso_1 Proceso_2
+5 Proceso_10
+67 Proceso_3 Proceso_4 Proceso_5
+120 Proceso_6 Proceso_7
+166 Proceso_8 Proceso_9

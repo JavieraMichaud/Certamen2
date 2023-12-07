@@ -1,0 +1,54 @@
+El Problema 1 describe una simulación de la ejecución de múltiples 
+procesos sobre un procesador mono-núcleo (n = 1), 
+utilizando un modelo de procesos de 5 estados.
+
+
+
+
+Los principales elementos del enunciado son:
+
+    Se debe simular la ejecución entrelazada de múltiples procesos sobre un solo núcleo de CPU.
+    Cada proceso tiene un conjunto de instrucciones a ejecutar y un Bloque de Control (BCP) con información como id, estado, contador de programa, etc.
+    Existe un planificador o despachador (dispatcher) que administra la ejecución de los procesos, cambiándolos de estado y asignando el uso de la CPU.
+    Hay 2 colas, una de Listos y otra de Bloqueados, para almacenar los procesos que no se están ejecutando.
+    El dispatcher alterna la ejecución de los procesos cada quantum (o ) instrucciones. Cambia el estado del proceso actual, lo mueve a la cola correspondiente, extrae otro proceso de Listos y lo pone en Ejecución.
+    Los procesos pueden realizar E/S (ES en las instrucciones), lo que los bloquea. Luego se desbloquean y pasan de nuevo a Listos.
+    La salida es un archivo con la traza de instrucciones ejecutadas (intercaladas) de cada proceso.
+
+
+El codigo cumple con:
+
+1."Simulación Orientada a Procesos mediante el uso de corrutinas":
+    La simulación en general se implementa mediante gorutinas para cada proceso en el código.
+
+2."Modelo de procesos de 5 estados":
+    El modelo de estados se gestiona en la estructura Proceso y en funciones como ejecutarInstrucciones() y cambiarProceso().
+
+3."Esquema de 2 colas para gestión de procesos":
+    Las colas se implementan en las estructuras Cola, y se utilizan en todo el código para agregar/quitar procesos.
+
+4."Dispatcher que realiza cambio de procesos cada m instrucciones":
+    El dispatcher es el struct Dispatcher. El cambio cada m instrucciones se implementa en la función ejecutarInstrucciones().
+
+5."Instrucciones del dispatcher para realizar sus tareas":
+    Sus tareas se implementan en las funciones ejecutarInstrucciones() y cambiarProceso() del dispatcher.
+
+6."Leer archivo de órdenes de creación de procesos":
+    Se implementa en la función leerOrdenes().
+
+7."Definición de Procesos en archivos de texto":
+    Se leen en la función cargarProcesoDesdeArchivo().
+
+8."Ejecución del programa mediante línea de comandos":
+    Está en la función main(), que procesa los argumentos de entrada.
+
+9. "Salida con traza de ejecución entrelazada de procesos":
+    Se genera en la función generarLineaTrama(), que va escribiendo las líneas en el archivo de salida dentro de ejecutarSimulacion().
+
+
+el codigo no cumple con: mostrar los datos en salida.txt
+
+Un problema de bloqueo al cargar los datos del despachador por el ID 100 
+
+es posible que el archivo específico para el despachador ("Procesos\despachador.txt")
+no se encuentre en la ruta esperada o tenga algún problema de acceso.
